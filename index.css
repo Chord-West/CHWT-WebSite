@@ -5,11 +5,11 @@ body {
 header{
     width : 100%;
     height: 100px;
-    background-color: #24292E;
+    background-color: rgba(36,41,46,0.9);
+    box-shadow: 0px 4px 32px rgba(0, 0, 0, 0.2);
 }
 header .header_nav{
     display: flex;
-    /* color: 020000; */
     color: #ffffff;
     max-width: 1024px;
     height: 100%;
@@ -20,10 +20,15 @@ header .header_nav{
     font-size: 32px;
 }
 
+.site_title{
+    margin : 100px 0px 100px 0px;
+    text-align: center;   
+}
+
 .container{
     margin :auto;
     max-width: 1440px;
-    height: 1024px;
+    height: 700px;
     box-shadow: 0px 4px 32px rgba(0, 0, 0, 0.1);
     background-color:#E5E5E5;
     border-radius: 30px;
@@ -32,33 +37,110 @@ header .header_nav{
 .container .main{
     max-width: 1024px;
     margin : auto;
-    padding-top : 100px;
+    padding-top : 50px;
+}
+
+.container .main .profile_title h3{
+    font-family: Russo One;
+    font-size: 40px;
+    margin: 0px;
 }
 .container .main .profile_card{
     display: flex;
     align-items: center;
     justify-content: space-around;
     width: 100%;
-    height: 500px;
-    border : 1px solid black;
-    
+    height: 500px;    
 }
+
 .container .main .profile_card .img_box{
-    border : 1px solid black;
+    display: flex;
     height: 400px;
     width : 250px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.container .main .profile_card .img_box img{
+    border-radius: 150px;
+    height: 300px;
+    width : 300px;
+    box-shadow: 0px 4px 32px rgba(0, 0, 4, 0.5);
+}
+
+.container .main .profile_card .img_box h3{
+    font-family: Russo One;
+    font-size: 24px;
 }
 
 .container .main .profile_card .introduce{
-    border : 1px solid black;
+    overflow: hidden;
     height: 400px;
     width : 600px;
+    box-shadow: 0px 4px 32px rgba(0, 0, 4, 0.5);
+    border-radius: 10px;
 }
+
 .container .main .profile_card .introduce .banner{
+    display: flex;
     height: 30px;
     background-color: #4A4342;
+    align-items: center;
+    text-align: center;
+}
+.container .main .profile_card .introduce .banner span{
+    margin-left: 10px;
+    color : #4A4342;
+    font-weight: bolder;
+    height: 20px;
+    width: 20px;
+    background-color: #64635E;
+    font-size: 15px;
+    border-radius: 150px;
+}
+.container .main .profile_card .introduce .banner p{
+    font-family: Russo One;
+    margin-left: 10px;
+    color : #64635E;
+    font-size: 15px;
+
 }
 .container .main .profile_card .introduce .introduce_content{
+    display: grid;
+
     background-color: #072B37;
     height: 370px;
+    grid-template-columns: 1.8fr 2fr;
+    align-items: center;
+    justify-content: center;
+}
+.container .main .profile_card .introduce .introduce_content .introduce_item1{
+    display: flex;
+    justify-content: space-between;
+}
+.container .main .profile_card .introduce .introduce_content .introduce_item1 span{
+    font-family: "고딕체";
+    font-weight: bolder;
+    color : #74960A;
+    font-size :20px;
+    margin : 0px 20px 0px 20px;
+  
+}
+.container .main .profile_card .introduce .introduce_content .introduce_item2{
+    font-family: Russo One;
+    color : #1F83BA;
+    font-size :20px;
+    margin : 0px 20px 0px 20px;
+}
+
+
+footer {
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+    height: 100px;
+    width : 100%;
+    background-color: rgba(0, 128, 128, 0.8);
 }
