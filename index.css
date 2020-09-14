@@ -1,5 +1,5 @@
 body {
-    background-color:#F2F2F2;
+    background-color: rgba(0, 128, 128, 0.8);
     margin : 0px;
 }
 header{
@@ -22,73 +22,101 @@ header .header_nav{
 
 .site_title{
     margin : 100px 0px 100px 0px;
-    text-align: center;   
+    text-align: center;
+    font-family: Russo One;
+    font-size: 40px;
+    color: white;
+    animation-duration: 3s;
+    animation-name: slidein;
 }
-
-.container{
+.site_title img{
+    width: 64px;
+    height: 64px;
+}
+@keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%; 
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
+div[class^="container"]{
     margin :auto;
     max-width: 1440px;
-    height: 700px;
     box-shadow: 0px 4px 32px rgba(0, 0, 0, 0.1);
-    background-color:#E5E5E5;
     border-radius: 30px;
 }
-
-.container .main{
+.container_profile{
+    background-color:#E5E5E5;
+}
+.container_profile .main{
     max-width: 1024px;
     margin : auto;
-    padding-top : 50px;
+    padding : 50px 0px 50px 0px;
+    background-color:#E5E5E5;
 }
 
-.container .main .profile_title h3{
+.container_profile .main .profile_title h3{
     font-family: Russo One;
     font-size: 40px;
     margin: 0px;
 }
-.container .main .profile_card{
+.container_profile .main .profile_card{
     display: flex;
     align-items: center;
     justify-content: space-around;
     width: 100%;
-    height: 500px;    
+    height: 500px;
+       
 }
 
-.container .main .profile_card .img_box{
+
+.container_profile .main .profile_card .img_box{
     display: flex;
     height: 400px;
     width : 250px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    transition: all ease 1s; 
 }
-.container .main .profile_card .img_box img{
+
+.container_profile .main .profile_card .img_box img{
     border-radius: 150px;
     height: 300px;
     width : 300px;
     box-shadow: 0px 4px 32px rgba(0, 0, 4, 0.5);
 }
 
-.container .main .profile_card .img_box h3{
+.container_profile .main .profile_card .img_box h3{
     font-family: Russo One;
     font-size: 24px;
 }
 
-.container .main .profile_card .introduce{
-    overflow: hidden;
+.container_profile .main .profile_card .introduce{
+    
     height: 400px;
     width : 600px;
+    overflow: hidden;
     box-shadow: 0px 4px 32px rgba(0, 0, 4, 0.5);
     border-radius: 10px;
+    transition: all ease 1s; 
 }
-
-.container .main .profile_card .introduce .banner{
+.container_profile .main .profile_card .introduce:hover{
+    transform: scale( 1.1 );
+}
+.container_profile .main .profile_card .introduce .banner{
     display: flex;
     height: 30px;
     background-color: #4A4342;
     align-items: center;
     text-align: center;
 }
-.container .main .profile_card .introduce .banner span{
+.container_profile .main .profile_card .introduce .banner span{
     margin-left: 10px;
     color : #4A4342;
     font-weight: bolder;
@@ -98,14 +126,14 @@ header .header_nav{
     font-size: 15px;
     border-radius: 150px;
 }
-.container .main .profile_card .introduce .banner p{
+.container_profile .main .profile_card .introduce .banner p{
     font-family: Russo One;
     margin-left: 10px;
     color : #64635E;
     font-size: 15px;
 
 }
-.container .main .profile_card .introduce .introduce_content{
+.container_profile .main .profile_card .introduce .introduce_content{
     display: grid;
 
     background-color: #072B37;
@@ -114,11 +142,12 @@ header .header_nav{
     align-items: center;
     justify-content: center;
 }
-.container .main .profile_card .introduce .introduce_content .introduce_item1{
+.container_profile .main .profile_card .introduce .introduce_content .introduce_item1{
     display: flex;
     justify-content: space-between;
 }
-.container .main .profile_card .introduce .introduce_content .introduce_item1 span{
+.container_profile .main .profile_card .introduce .introduce_content .introduce_item1 span{
+  
     font-family: "고딕체";
     font-weight: bolder;
     color : #74960A;
@@ -126,21 +155,70 @@ header .header_nav{
     margin : 0px 20px 0px 20px;
   
 }
-.container .main .profile_card .introduce .introduce_content .introduce_item2{
+.container_profile .main .profile_card .introduce .introduce_content .introduce_item2{
     font-family: Russo One;
     color : #1F83BA;
     font-size :20px;
     margin : 0px 20px 0px 20px;
 }
 
+.project{
+    margin-top: 100px;
+    background-color: #263647;
+    padding : 100px 0px 100px 0px;
+}
+.project .container_project{
+    background-color: #E5E5E5;
 
+}
+.project .container_project .main_project{
+    max-width: 1024px;
+    margin : auto;
+    padding : 50px 0px 50px 0px;
+    height: 700px;
+}
+
+.project .container_project .main_project .project_title h3{
+    font-family: Russo One;
+    font-size: 50px;
+}
+
+.project .container_project .main_project .projectlist{
+    display: flex;
+    width: 100%;
+    height: 500px;
+    justify-content: space-around;
+}
+.project .container_project .main_project .projectlist .item_wrapper{
+    overflow: hidden;
+    box-shadow: 0px 4px 32px rgba(0, 0, 4, 0.5);
+    border-radius: 10px;
+    background-color: white;
+    color:black;
+    font-family: Russo One;
+    font-size: 24px;
+    transition: all ease 1s;
+}
+
+.project .container_project .main_project .projectlist .item_wrapper:hover{
+    transform: scale( 1.2 );
+}
+
+.project .container_project .main_project .projectlist .item_wrapper img{
+    height: 300px;
+    width: 300px;
+}
+.project .container_project .main_project .projectlist .item_wrapper .item{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+}
 footer {
-    position: absolute;
-
-    left: 0;
-
-    bottom: 0;
-    height: 100px;
-    width : 100%;
-    background-color: rgba(0, 128, 128, 0.8);
+    display: flex;
+    background-color:#EEEEEE;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    font-size: 32px;
 }
