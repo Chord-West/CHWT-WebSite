@@ -49,8 +49,11 @@ header .header_nav a:link, header .header_nav a:visited{
     margin: 0px 20px;
     padding-top: 50px;
 }
-
+.container_board .menu .menu_bar .Login{
+    
+}
 .container_board .menu .menu_bar .menu_title{
+    margin-top: 50px;
     font-family: Russo One;
     font-size: 28px;
 }
@@ -61,8 +64,11 @@ header .header_nav a:link, header .header_nav a:visited{
     border-top: 1px solid lightgray;
     padding-top: 10px;
 }
-.container_board .menu .menu_bar .category .category_title{
-
+.container_board .menu .menu_bar .category .category_title{    
+}
+.container_board .menu .menu_bar .login input[type="button"]{
+    width: 20px;
+    padding: 30px;
 }
 .container_board .main{
 

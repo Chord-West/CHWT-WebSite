@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="board.css">
-
     <title>Board</title>
 </head>
 <body>
@@ -20,10 +18,18 @@
     <section class="container_board">
         <aside class="menu">
             <div class="menu_bar">
+                <div class="Login">
+                    <div class="Login_title">Admin</div>
+                    <form name="loginForm">
+                        <input type="text" name="id"/>
+                        <input type="text" name="password"/>
+                        <button type="button" onclick="validadmin()">Login</button>
+                    </form>
+                </div>
                 <div class="menu_title">Category</div>
                 <div class="category">
                     <div class="category_title">Dev.note</div>
-                    <ul>
+                    <ul class="category_list">
                         <li>개발상식</li>
                         <li>알고리즘</li>
                         <li>아이디어</li>
@@ -47,6 +53,10 @@
                 <div class="board_content">
                     게시글 내용
                 </div>
+            </div>
+            <div class="postmenu">
+                <button class="post">글쓰기</button>
+
             </div>
         </section>
     </section>
