@@ -1,5 +1,7 @@
 let validcheck="false";
 
+let checkId;
+let checkPassword;
 
 let menubtn = document.getElementsByClassName("menu_btn");
 menubtn[0].onclick = function(){
@@ -57,19 +59,23 @@ function getPosts(){
 function validadmin(){
     let loginform = document.loginForm;
     let inputId = loginform.id.value;
-    let inputpassword = loginform.password.value;
-    let valid;
-    let valps;
-    console.log(adminId, password);
-    const validData = firebase.database().ref('/admin/').once('value',function(snapshot){
-        valid=snapshot.val().id;
-        valps=snapshot.val().password;
-        console.log(valid,valps);
-    });
-    if(adminId===valid&&password===valps){
+    let inputPassword = loginform.password.value;
+    // console.log(inputId,inputPassword);
+    if(inputId===checkId&&inputPassword===checkPassword){
         console.log("success");
+    }
+    else{
+        alert("실패 하였습니다.");
     }
 }
 
+function loadAdminInfo(){
+    firebase.database().ref('/admin/').once('value', function(snapshot){
+        checkId = snapshot.val().id;
+        checkPassword = snapshot.val().password;
+    });
+}
+
+loadAdminInfo();
 
 console.log(database);
