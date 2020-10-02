@@ -1,6 +1,6 @@
 let checkId;
 let checkPassword;
-
+const devRef=database.ref('devnote');
 
 
 let articleDate = document.querySelector(".article_date"),
