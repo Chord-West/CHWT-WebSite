@@ -21,13 +21,15 @@
                 <div class="writing_content">
                     <div class="select_category">
                     </div>
-                    <form action="">
+                    <form name="writeForm">
                         <div class="article_title">
                             <span>타이틀</span>
-                            <input type="text">
-                            <div class="article_date">2020년 어쩌구 저쩌구</div>
+                            <input type="text" name="title">
+                            <div class="article_date"><p></p></div>
                         </div>
-                        <textarea name="" id="" cols="100" rows="50"></textarea>
+                        <textarea name="content" id="" cols="100" rows="40"></textarea>
+                        <button type="button" href="board.html" onclick="validcheck()">글쓰기</button>
+                        <input name="adminpassword" type="password" placeholder="글쓰기 비밀번호">
                     </form>
                 </div>
                 <div class="board_footer">
@@ -43,7 +45,7 @@
     </footer>
     <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
-    <script src="../js/board.js"></script>
+    <script src="../js/board_writing.js"></script>
     
 </body>
 </html>

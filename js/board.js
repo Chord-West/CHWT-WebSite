@@ -3,6 +3,10 @@ let validcheck="false";
 let checkId;
 let checkPassword;
 
+let categorylist = document.querySelector(".category_list");
+
+let postData=[];
+
 let menubtn = document.getElementsByClassName("menu_btn");
 menubtn[0].onclick = function(){
     let navbar = document.getElementsByClassName("menu");
@@ -44,38 +48,17 @@ function writePost(username,title, body) {
 
 
 function getPosts(){
-    const postRef = firebase.database().ref('/posts/').once('value',function(snapshot){
-        const postData = Object.entries(snapshot.val());
-        for(let i=0; i<postData.length; i++){
-            const [key, body] = postData[i];
-            console.log(key,body);
-        }
+    firebase.database().ref('/devnote/').once('value',function(snapshot){
+        postData = Object.entries(snapshot.val());
+        // for(let i=0; i<postData.length; i++){
+        //     const key = postData[i];
+        // }
         // console.log(postData);
     });
 
-    return ;
 }
 
-function validadmin(){
-    let loginform = document.loginForm;
-    let inputId = loginform.id.value;
-    let inputPassword = loginform.password.value;
-    // console.log(inputId,inputPassword);
-    if(inputId===checkId&&inputPassword===checkPassword){
-        console.log("success");
-    }
-    else{
-        alert("실패 하였습니다.");
-    }
+ function paintData(){
+    console.log(postData);
+
 }
-
-function loadAdminInfo(){
-    firebase.database().ref('/admin/').once('value', function(snapshot){
-        checkId = snapshot.val().id;
-        checkPassword = snapshot.val().password;
-    });
-}
-
-loadAdminInfo();
-
-console.log(database);
