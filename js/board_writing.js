@@ -1,10 +1,7 @@
-let checkId;
 let checkPassword;
-const devRef=database.ref('devnote');
 
-
-let articleDate = document.querySelector(".article_date"),
-articleTitle=articleDate.querySelector("p");
+let writeDate = document.querySelector(".write_date"),
+writeTitle=writeDate.querySelector("p");
 function getTime(){
     let date =new Date();
     let year =date.getFullYear();
@@ -15,7 +12,7 @@ function getTime(){
     month=month>9 ?  month : "0"+month;
     hours=hours>9 ?  hours : "0"+hours;
     minutes=minutes >9 ? minutes : "0"+minutes;
-    articleTitle.innerText =+year+"년"+month+"월"+day+"일"+hours+"시"+minutes+"분";
+    writeTitle.innerText =+year+"년"+month+"월"+day+"일"+hours+"시"+minutes+"분";
 
 }
 
@@ -45,18 +42,6 @@ function writePost(title,content, time) {
 }
 
 
-function getPosts(){
-    const postRef = firebase.database().ref('/posts/').once('value',function(snapshot){
-        const postData = Object.entries(snapshot.val());
-        for(let i=0; i<postData.length; i++){
-            const [key, body] = postData[i];
-            console.log(key,body);
-        }
-        // console.log(postData);
-    });
-
-    return ;
-}
 
 function validcheck(){
     let writeform = document.writeForm;
@@ -66,7 +51,7 @@ function validcheck(){
     let inputPassword = writeform.adminpassword.value;
     console.log(title,content,time,checkPassword);
     if(inputPassword===checkPassword&&title!=null&&content!=null){
-        // writePost(title,content,time);
+        writePost(title,content,time);
         location.replace('./board.html');
     }
     else{

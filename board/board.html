@@ -18,20 +18,11 @@
     <section class="container_board">
         <aside class="menu">
             <div class="menu_bar">
-                <div class="Login">
-                    <a href="./board_writing.html">운영자 글쓰기</a>
-                </div>
+
                 <div class="menu_title">Category</div>
                 <div class="category">
                     <div class="category_title">Dev.note</div>
-                    <ul class="category_list">
-                        <li>개발상식</li>
-                        <li>알고리즘</li>
-                        <li>아이디어</li>
-                    </ul>
-                </div>
-                <div class="category">
-                    <div class="category_title">GuestBook</div>
+                    <ul class="category_list"> </ul>
                 </div>
                 <div class="category">
                     <div class="category_title">News</div>
@@ -39,38 +30,28 @@
                 <div class="category">
                     <div class="category_title">Photo</div>
                 </div>
+                <div class="Login">
+                    <a href="./board_writing.html">운영자 글쓰기</a>
+                </div>
             </div>
         </aside>
         <section class="main">
+            <div class="initpage">
+                <div class="init_top">@chord.west BoardPage</div>
+                <img src="../images/board_main.jpg" alt="">
+                <div class="init_bottom"></div>
+            </div>
             <div class="board">
-                <div class="board_title">
-                    <span>Dev.note</span>
-                    <span>개발상식</span>
-                </div>
-                <div class="article_list">
+                <div class="board_title"></div>
+                <div class="board_main">
                     <div class="article_item">
-                        <div class="article_title"></div>
                         <div class="article_date"></div>
-                    </div>
-                    <div class="article_item">
-                        <div class="article_title"></div>
-                        <div class="article_date"></div>
-                    </div>
-                    <div class="article_item">
-                        <div class="article_title"></div>
-                        <div class="article_date"></div>
-                    </div>
-                    <div class="article_item">
-                        <div class="article_title"></div>
-                        <div class="article_date"></div>
-                    </div>
-                    <div class="article_item">
-                        <div class="article_title"></div>
-                        <div class="article_date"></div>
+                        <div class="article_content"></div>
                     </div>
                 </div>
                 <div class="board_footer">
-
+                    <button class="article_edit" onclick="editItem()">수정</button>
+                    <button class="article_delete" onclick="removeItem()">삭제</button>
                 </div>
             </div>
         </section>
