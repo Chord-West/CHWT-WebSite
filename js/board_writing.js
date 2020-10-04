@@ -1,7 +1,8 @@
 let checkPassword;
 
 let writeDate = document.querySelector(".write_date"),
-writeTitle=writeDate.querySelector("p");
+writeTime=writeDate.querySelector("p");
+
 function getTime(){
     let date =new Date();
     let year =date.getFullYear();
@@ -12,8 +13,7 @@ function getTime(){
     month=month>9 ?  month : "0"+month;
     hours=hours>9 ?  hours : "0"+hours;
     minutes=minutes >9 ? minutes : "0"+minutes;
-    writeTitle.innerText =+year+"년"+month+"월"+day+"일"+hours+"시"+minutes+"분";
-
+    writeTime.innerText =+year+"년"+month+"월"+day+"일"+hours+"시"+minutes+"분";
 }
 
 var firebaseConfig = {
@@ -47,7 +47,7 @@ function validcheck(){
     let writeform = document.writeForm;
     let title = writeform.title.value;
     let content = writeform.content.value;
-    let time = articleTitle.innerText;
+    let time = writeTime.innerText;
     let inputPassword = writeform.adminpassword.value;
     console.log(title,content,time,checkPassword);
     if(inputPassword===checkPassword&&title!=null&&content!=null){

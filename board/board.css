@@ -70,6 +70,11 @@ header .header_nav a:link, header .header_nav a:visited{
     margin : 5px 0px;
     list-style: none;
 }
+.container_board .menu .menu_bar .Login {
+    margin-top: 300px;
+    text-align: center;
+}
+
 .container_board .main{
     background-color: #F0F0F0;
     width: 100%;
@@ -129,10 +134,21 @@ header .header_nav a:link, header .header_nav a:visited{
 }
 .container_board .main .board .board_main .article_item .article_content{
     font-family: 'Hanna', serif;
-    margin-left: 22px;
+    margin-left: 20px;
+    line-height: 30px;
+    
 }
 .container_board .main .board .board_footer{
+    margin : 15px 20px 0px 0px;
     text-align: end;
+}
+.container_board .main .board .board_footer button{
+    color: #ffffff;
+    background-color: #1E90FF;
+    width: 80px;
+    height: 30px;
+    border: none;
+    border-radius: 15px;
 }
 footer {
     display: flex;

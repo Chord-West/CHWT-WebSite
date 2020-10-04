@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="board_writing.css">
-    <title>Board_Writing</title>
+    <link rel="stylesheet" href="board_edit.css">
+    <title>Board_Edit</title>
 </head>
 <body>
     <header>
@@ -15,24 +15,24 @@
             <button class="menu_btn"><img src="../images/menu.png" alt=""></button>
         </div>
     </header>
-    <section class="container_board_writing">
+    <section class="container_board_editing">
         <section class="main">
-            <div class="post">
-                <div class="writing_content">
-                    <div class="wrapper"> 
-                        <form name="writeForm">
-                            <div class="write_title">
+            <div class="edit">
+                <div class="editing_content">
+                    <div class="wrapper">
+                        <form name="editForm">
+                            <div class="edit_title">
                                 <div>
                                     <span>Title</span>
-                                    <input type="text" name="title">
+                                    <input type="text" name="edit_title">
                                 </div>
-                                <div class="write_date"><p></p></div>
+                                <div class="edit_date"><p></p></div>
                             </div>
-                            <textarea name="content" id="" cols="50" rows="30"></textarea>
+                            <textarea name="edit_content" cols="50" rows="30"></textarea>
                             <input name="adminpassword" type="password" placeholder="글쓰기 비밀번호">
                             <div class="btn_wrapper">
-                                <button class="post_btn" type="button" href="board.html" onclick="validcheck()">글쓰기</button>
-                            </div>    
+                                <button class="edit_btn" type="button" href="board.html" onclick="edit()">수정하기</button>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -46,7 +46,7 @@
     </footer>
     <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
-    <script src="../js/board_writing.js"></script>
+    <script src="../js/board_edit.js"></script>
     
 </body>
 </html>

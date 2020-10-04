@@ -17,8 +17,6 @@ menubtn[0].onclick = function(){
 }
 
 
-
-
 let firebaseConfig = {
     apiKey: "AIzaSyAbRit_OIY4dohuub5-CzMHaQfJu7G2-N4",
     authDomain: "chord-west.firebaseapp.com",
@@ -85,20 +83,31 @@ function paintData(event){
     }
 }
 function editItem(){
-
+    let body = document.querySelector('body');
+    let form = document.createElement("form");
+    form.name='tempPost';
+    form.method='get';
+    form.action='../board/board_edit.html';
+    let input = document.createElement("input");
+    input.type="hidden";
+    input.name="json";
+    input.value=current_key;
+    form.append(input);
+    body.append(form);
+    form.submit();
 }
 function removeItem(){
-    console.log(remove_key);
+
     if(prompt("비밀번호 입력")==checkPassword){
-        database.ref('devnote').child(remove_key).remove();
+        database.ref('devnote').child(current_key).remove();
         location.reload();
         alert("ok");
     }else{
         alert("실패하셨습니다");
         return
     }
-
 }
+
 function loadAdminInfo(){
     firebase.database().ref('/admin/').once('value', function(snapshot){
         checkId = snapshot.val().id;
