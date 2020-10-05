@@ -2,7 +2,18 @@ const categorylist = document.querySelector(".category_list");
 let board = document.querySelector(".board");
 let initpage = document.querySelector(".initpage");
 let menubtn = document.getElementsByClassName("menu_btn");
+let devlist = document.querySelector(".category_title");
 
+let postData;
+let listItems;
+
+devlist.onclick=()=>{
+    if(categorylist.style.display=='none'){
+        categorylist.style.display='block';
+    }else{
+        categorylist.style.display='none';
+    }
+}
 
 let checkPassword;
 
@@ -16,6 +27,9 @@ menubtn[0].onclick = function(){
     }
 }
 
+function pageChange(){
+    location.replace('../board/board_writing.html');
+}
 
 let firebaseConfig = {
     apiKey: "AIzaSyAbRit_OIY4dohuub5-CzMHaQfJu7G2-N4",
@@ -32,9 +46,6 @@ firebase.initializeApp(firebaseConfig);
 let database = firebase.database();
 
 
-
-let postData;
-let listItems;
 
 function getPosts(){
     let data=  firebase.database().ref('/devnote/');
@@ -59,6 +70,9 @@ function listData(postElement){
            paintData(event.currentTarget.className);
            board.style.display="block";
            initpage.style.display="none";
+           if(matchMedia("screen and (max-width:420px)").matches){
+               categorylist.style.display="none";
+           }
         });
       });
 }

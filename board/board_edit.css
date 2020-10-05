@@ -68,9 +68,10 @@ header .header_nav a:link, header .header_nav a:visited{
     flex-direction: column;
     justify-content: center;
     width: 90%;
+    height: 700px;
     margin-top: 30px;
 }
-.container_board_editing  .main .edit .editing_content form input[name="title"]{
+.container_board_editing  .main .edit .editing_content form input[name="edit_title"]{
     font-size: 20px;
     border: none;
     border-bottom:2px solid black;
@@ -105,7 +106,7 @@ header .header_nav a:link, header .header_nav a:visited{
 .container_board_editing  .main .edit .editing_content form .btn_wrapper{
     text-align: right;
 }
-.container_board_editing  .main .edit .editing_content form .btn_wrapper .post_btn{
+.container_board_editing  .main .edit .editing_content form .btn_wrapper .edit_btn{
     color: #ffffff;
     background-color: #1E90FF;
     width: 80px;
@@ -124,3 +125,18 @@ footer {
     font-size: 16px;
 }
 
+@media (max-width: 420px) { 
+    .container_board_editing  .main .edit .editing_content form input[name="edit_title"]{
+        font-size: 12px;
+        border: none;
+        border-bottom:1px solid black;
+        width: 130px;
+    }
+    .container_board_editing  .main .edit .editing_content form .edit_title span{
+        font-weight: bolder;
+    }
+    .container_board_editing  .main .edit .editing_content form .edit_title .edit_date{
+        font-size: 10px;
+        font-weight: normal;
+    }
+}
