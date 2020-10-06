@@ -32,9 +32,7 @@ function onYouTubeIframeAPIReady() {
 }
 
 function onPlayerReady(event) {
-    event.target.setVolume(50);
-    event.target.playVideo();
-    
+    event.target.setVolume(50);   
 }
 
 function onPlayerStateChange(event) {
