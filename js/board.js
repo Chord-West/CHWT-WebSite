@@ -25,15 +25,16 @@ function onYouTubeIframeAPIReady() {
         height: '0',
         videoId: 'q57XybMOiEA',
         events: {
-          'onReady': onPlayerReady, //로딩할때 이벤트 실행
-          'onStateChange': onPlayerStateChange //플레이어 상태 변화시 이벤트실행
+          'onReady': onPlayerReady, 
+          'onStateChange': onPlayerStateChange 
         }
-    });//youTubePlayer1셋팅
+    });
 }
 
 function onPlayerReady(event) {
-    event.target.playVideo();//자동재생
-    //로딩할때 실행될 동작을 작성한다.
+    event.target.setVolume(50);
+    event.target.playVideo();
+    
 }
 
 function onPlayerStateChange(event) {
