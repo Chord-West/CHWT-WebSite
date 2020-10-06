@@ -117,6 +117,19 @@ header .header_nav a:link, header .header_nav a:visited{
     align-items: center;
 }
 
+.container_board .main .youtubeControl .btn_play,
+.container_board .main .youtubeControl .btn_pause,
+.container_board .main .youtubeControl .btn_stop{
+    margin: 0px 10px;
+    width: 32px;
+    height: 32px;
+}
+.container_board .main .youtubeControl .btn_play img,
+.container_board .main .youtubeControl .btn_stop img,
+.container_board .main .youtubeControl .btn_pause img{
+    width: 24px;
+    height: 24px;
+}
 .container_board .main .initpage {
     display: flex;
     height: 100%;
