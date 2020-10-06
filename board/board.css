@@ -34,7 +34,7 @@ header .header_nav a:link, header .header_nav a:visited{
     text-decoration: none;
     font-size: 20px;
 }
-
+#youTubePlayer1 {display:none; }
 .container_board{
     margin: auto;
     max-width: 1024px;
@@ -91,7 +91,7 @@ header .header_nav a:link, header .header_nav a:visited{
     padding: 3px;
 }
 .container_board .menu .menu_bar .post {
-    margin-top: 150px;
+    margin-top: 100px;
     text-align: center;
 }
 .container_board .menu .menu_bar .post button{
@@ -105,8 +105,18 @@ header .header_nav a:link, header .header_nav a:visited{
 .container_board .main{
     background-color: #F0F0F0;
     width: 100%;
-    height: 900px;
+    height: 850px;
 }
+.container_board .main .youtubeControl{
+    display: flex;
+    background-color: black;
+    color : white;
+    height: 50px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
 .container_board .main .initpage {
     display: flex;
     height: 100%;
@@ -123,8 +133,8 @@ header .header_nav a:link, header .header_nav a:visited{
     margin-bottom: 50px;
 }
 .container_board .main .initpage img{
-    width: 90%;
-    height: 700px;
+    width: 85%;
+    height: 650px;
     box-shadow: 0px 4px 15px 9px rgba(0, 0, 0, 0.2);
     border-radius: 30px;
 
@@ -139,13 +149,13 @@ header .header_nav a:link, header .header_nav a:visited{
 .container_board .main .board .board_title{
     border-bottom: 1px solid gray;
     max-width: 700px;
-    margin-top: 50px;
+    margin-top: 0px;
     overflow-x: scroll;
 }
 
 .container_board .main .board .board_main{
     margin-top: 30px;
-    height: 650px;
+    height: 600px;
     background: #FFFFFF;
     box-shadow: 0px 4px 15px 9px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
@@ -202,8 +212,9 @@ footer {
     }
     .container_board .main{
         background-color: #F0F0F0;
+ 
         width: 100%;
-        height: 900px;
+        height: 850px;
     }
     .container_board .main .initpage {
         display: flex;

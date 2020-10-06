@@ -4,6 +4,56 @@ let initpage = document.querySelector(".initpage");
 let menubtn = document.getElementsByClassName("menu_btn");
 let devlist = document.querySelector(".category_title");
 
+
+let youtubecontrol=document.querySelector(".youtubeControl"),
+playbtn=youtubecontrol.querySelector(".btn_play"),
+pausebtn=youtubecontrol.querySelector(".btn_pause"),
+stopbtn=youtubecontrol.querySelector(".btn_stop");
+
+// youtube API 불러옴
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/player_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+// 플레이어변수 설정
+var youTubePlayer;
+
+function onYouTubeIframeAPIReady() {
+    youTubePlayer = new YT.Player('youTubePlayer1', {
+        width: '0',
+        height: '0',
+        videoId: 'q57XybMOiEA',
+        events: {
+          'onReady': onPlayerReady, //로딩할때 이벤트 실행
+          'onStateChange': onPlayerStateChange //플레이어 상태 변화시 이벤트실행
+        }
+    });//youTubePlayer1셋팅
+}
+
+function onPlayerReady(event) {
+    event.target.playVideo();//자동재생
+    //로딩할때 실행될 동작을 작성한다.
+}
+
+function onPlayerStateChange(event) {
+    if (event.data == YT.PlayerState.PLAYING) {
+        //플레이어가 재생중일때 작성한 동작이 실행된다.
+    }
+  }
+playbtn.addEventListener('click',function(){
+    youTubePlayer.playVideo();
+});
+
+pausebtn.addEventListener('click',function(){
+    youTubePlayer.pauseVideo();
+});
+
+stopbtn.addEventListener('click',function(){
+    youTubePlayer.stopVideo();
+});
+
+
 let postData;
 let listItems;
 
@@ -70,6 +120,7 @@ function listData(postElement){
            paintData(event.currentTarget.className);
            board.style.display="block";
            initpage.style.display="none";
+           youtubecontrol.style.background="#F0F0F0";
            if(matchMedia("screen and (max-width:420px)").matches){
                categorylist.style.display="none";
            }
