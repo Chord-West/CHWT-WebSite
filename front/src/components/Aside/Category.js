@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useRef,useState} from 'react';
 import {Link} from 'react-router-dom';
 import CreateCategory from "./CreateCategory";
 
@@ -30,8 +30,15 @@ const Category = () => {
         setText(e.target.value);
     };
     const onCreate = () =>{
-
+        const category = {
+            id : nextId.current,
+            name:text,
+        };
+        setCateGorys(categorys=>categorys.concat(category));
+        nextId.current+=1
+        setAddCategory(false);
     };
+    const nextId = useRef(4);
 
     return(
         <>
