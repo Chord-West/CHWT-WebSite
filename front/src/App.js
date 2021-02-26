@@ -1,11 +1,12 @@
 import React from 'react';
 import About from './routes/About';
 import {Switch,Route} from 'react-router-dom';
-import PostEditor from "./components/Section/PostEditor";
 import Category from "./components/Aside/Category";
 import styled from 'styled-components';
 import Home from "./routes/Home";
 import Navbar from "./components/Header/Navbar";
+import Login from "./routes/Login";
+import SignUp from "./routes/SignUp";
 
 const Frame = styled.div`
   background: #DFE6ED;
@@ -31,11 +32,12 @@ const App = () => {
                         <Category/>
                     </Aside>
                     <div style={{width:'1200px',background:'wheat'}}>
-                        <div style={{marginTop:'50px',width:'1000px',margin:'0 auto',background:'#FFFFFF'}}>
+                        <div style={{marginTop:'50px',width:'1000px',margin:'0 auto'}}>
                             <Switch>
                                 <Route exact={true} path="/" component={Home}/>
                                 <Route path="/about" component={About}/>
-                                <Route path="/posteditor" component={PostEditor}/>
+                                <Route path="/login" component={Login}/>
+                                <Route path="/signup" component={SignUp}/>
                             </Switch>
                         </div>
                     </div>
